@@ -2,13 +2,13 @@
 
 Trees are, in essence, a very specific set of graphs which follow certain rules. As we know, graphs are just a collection of nodes, their data, and pointers to other nodes with data. Trees are minimally connected graphs, having only one path between any two vertices(Graphs can contain vertices with multiple paths: Unidirectional, bi-directional, etc).
 
-##Properties
+## Properties
 - Trees contain no loops, no circuits, no self-loops
 - Exactly one ROOT node
 - n-1 edges
 - Tree is a Hierarchical model
 
-##Run-times, Types and other important facts
+## Run-times, Types and other important facts
 
 - Trees are traversed by Pre-order, In-order, and Post order Traversals. 
 
@@ -34,5 +34,5 @@ AVL/Height Balanced Tree: Special Type of BST with additional property that    H
 - Deletion: Worst-Case -> O(Log2 n), Where Log2 is binary log function
 
 
-##Relationships/Distinctions from other DS
+## Relationships/Distinctions from other DS
 - Trees are specifically DAG: Directed Acyclic Graphs
