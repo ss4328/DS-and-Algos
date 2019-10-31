@@ -106,4 +106,11 @@ public class Tree {
         return printPath(key, root.rightChild);
     }
 
+    public boolean isSameTree(Node p, Node q) {
+        if(p==null && q ==null) return true;
+        if(p==null || q==null) return false;
+        if(p.key!=q.key) return false;
+        return(isSameTree(p.leftChild,q.leftChild) && isSameTree(p.rightChild,q.rightChild));
+    }
+
 }
