@@ -113,4 +113,41 @@ public class Tree {
         return(isSameTree(p.leftChild,q.leftChild) && isSameTree(p.rightChild,q.rightChild));
     }
 
+    public boolean isValidBST(Node root) {
+        if(isChildless(root))
+        {
+            return true;
+        }        
+        return isValidSubtree(root, null, null);        
+    }
+    
+    public boolean isValidSubtree(Node node, Integer lower, Integer upper){
+        if(node == null){
+            return true;
+        }
+        
+        //basically fancy way to check for node.val<lower, and node.val>upper cases
+        if (lower != null && node.key <= lower) return false;
+        if (upper != null && node.key >= upper) return false;
+        
+        //verify that left subtree is valid
+        if (!isValidSubtree(node.leftChild, lower, node.key)){
+            return false;
+        }
+        //verify that right subtree is valid
+        if(!isValidSubtree(node.rightChild, node.key, upper)){
+            return false;
+        }
+        
+        return true;
+    }
+    
+    private boolean isChildless(Node node){
+        if (node==null) return true;
+        if(node.leftChild == null && node.rightChild == null){
+            return true;
+        }
+        else return false;
+    }
+
 }
